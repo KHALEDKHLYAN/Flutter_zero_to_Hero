@@ -5,13 +5,22 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+      //Color(0xAARRGGBB)
+      borderSide: const BorderSide(
+        width: 2.0,
+        style: BorderStyle.solid,
+      ),
+      borderRadius: BorderRadius.circular(60),
+    );
+
+    return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               '0',
               style: TextStyle(
                 fontSize: 45,
@@ -20,16 +29,25 @@ class Home extends StatelessWidget {
               ),
             ),
             TextField(
-              style: TextStyle(
-                color: Colors.white60,
+              // obscureText: false,
+              style: const TextStyle(
+                color: Colors.black,
               ),
               decoration: InputDecoration(
+                border: const OutlineInputBorder(),
                 hintText: 'PLease enter the amount in USD',
-                hintStyle: TextStyle(
-                  color: Colors.white60,
+                hintStyle: const TextStyle(
+                  color: Colors.black,
                 ),
-                prefixIcon: Icon(Icons.monetization_on_outlined),
-                prefixIconColor: Colors.white60,
+                prefixIcon: const Icon(Icons.monetization_on_outlined),
+                prefixIconColor: Colors.black,
+                filled: true,
+                fillColor: Colors.white,
+                focusedBorder: border,
+                enabledBorder: border,
+              ),
+              keyboardType: const TextInputType.numberWithOptions(
+                decimal: true,
               ),
             )
           ],
