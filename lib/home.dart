@@ -53,9 +53,22 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: (){},
-              child: const Text('click Me!'),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.black),
+                  foregroundColor: MaterialStatePropertyAll(Colors.white),
+                  minimumSize: MaterialStatePropertyAll(
+                    Size(double.infinity, 50),
+                  ),
+                  shape: MaterialStatePropertyAll(
+                    BeveledRectangleBorder(),
+                  ),
+                ),
+                child: const Text('Convert!'),
+              ),
             )
           ],
         ),
