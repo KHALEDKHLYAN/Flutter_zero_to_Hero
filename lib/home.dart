@@ -51,20 +51,20 @@ class _HomeState extends State<Home> {
         // actions: [],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'KSH $result',
-              style: const TextStyle(
-                fontSize: 45,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 255, 255, 255),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'KSH ${result !=0 ? result.toStringAsFixed(3) : result.toStringAsFixed(0)}',
+                style: const TextStyle(
+                  fontSize: 45,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
+              TextField(
                 controller: textEditingController,
                 // obscureText: false,
                 style: const TextStyle(
@@ -87,10 +87,10 @@ class _HomeState extends State<Home> {
                   decimal: true,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
+              const SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
                 onPressed: convert,
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
@@ -101,9 +101,9 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 child: const Text('Convert!'),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
