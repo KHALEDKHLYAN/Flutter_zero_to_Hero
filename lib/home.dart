@@ -25,6 +25,11 @@ class _HomeState extends State<Home> {
   final TextEditingController textEditingController = TextEditingController();
   double result = 0;
 
+  void convert() {
+    result = double.parse(textEditingController.text) * 146.71;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
@@ -86,11 +91,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                  result = double.parse(textEditingController.text) * 146.71;
-                  });
-                },
+                onPressed: convert,
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
