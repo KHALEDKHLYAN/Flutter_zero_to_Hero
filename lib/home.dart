@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              result.toString(),
+              'KSH $result',
               style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
               child: ElevatedButton(
                 onPressed: () {
                   setState(() {
-                  result = double.parse(textEditingController.text) * 81;
+                  result = double.parse(textEditingController.text) * 146.71;
                   });
                 },
                 style: TextButton.styleFrom(
