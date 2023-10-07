@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+// class CurrencyConverter extends StatefulWidget {
+//   const CurrencyConverter({super.key});
+
+//   @override
+//   State<CurrencyConverter> createState() => _CurrencyConverterState();
+// }
+
+// class _CurrencyConverterState extends State<CurrencyConverter> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Placeholder();
+//   }
+// }
+
+class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final TextEditingController textEditingController = TextEditingController();
+  double result = 0;
+
+  @override
   Widget build(BuildContext context) {
-    final TextEditingController textEditingController = TextEditingController();
-    double result = 0;
     final border = OutlineInputBorder(
       //Color(0xAARRGGBB)
       borderSide: const BorderSide(
@@ -29,7 +49,7 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Text(
+            Text(
               result.toString(),
               style: const TextStyle(
                 fontSize: 45,
@@ -67,7 +87,9 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
                 onPressed: () {
+                  setState(() {
                   result = double.parse(textEditingController.text) * 81;
+                  });
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
